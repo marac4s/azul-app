@@ -34,6 +34,11 @@
   line-height: 300px;
 }
 
+.Heap {
+  border: 1px solid red;
+  line-height: 300px;
+}
+
 .Tile {
   margin: 5px;
   display: inline-block;

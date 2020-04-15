@@ -1,20 +1,19 @@
 import React from 'react';
 import Tile from './Tile';
 
-export default class Plate extends React.Component {
-    // state = {
-    //     selected: undefined
-    // };
+export default class Heap extends React.Component {
+    state = {
+        selected: undefined
+    };
 
     onTileClick(color) {
-        // this.setState((prevState) => ({selected: prevState.selected === color ? undefined : color})); 
-        this.props.callback(color);
+        this.setState((prevState) => ({selected: prevState.selected === color ? undefined : color})); 
     };
 
     render() {
         return (
             <div 
-                className="Plate" 
+                className="Heap" 
                 style={{width: 300 + 'px', height: 300 + 'px'}}
             >
                 {this.props.colors.map((color, index) => {
@@ -25,10 +24,9 @@ export default class Plate extends React.Component {
                         >
                             <Tile 
                                 color={color}
-                                selected={color === this.props.selected}
+                                selected={color === this.state.selected}
                             />
                         </span>   
-                        
                     );
                 })}
             </div>
