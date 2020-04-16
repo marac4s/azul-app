@@ -26,18 +26,25 @@ export default class App extends React.Component {
           return(
             <Plate 
               callback= {(color) =>{
-                this.setState(() =>{
-                  return ({
-                    selected: {
-                      plate: index,
-                      selected: color
-                  }});
-                })
-                console.log(this.state.selected);
-              }}
+                this.setState((prevState) =>{
+                  if(prevState.selected && prevState.selected.selected === color && prevState.selected.plate === index) {
+                    return ({
+                      selected: undefined
+                    })
+                  } else {
+                    return ({
+                      selected: {
+                        plate: index,
+                        selected: color
+                      }
+                    })
+                  }
+                }, () => {console.log(this.state.selected)})
+              }
+            }
               key= {'Plate' + index}
               colors={colors}
-              selected= {this.state.selected && this.state.selected.plate === index && this.state.selected.color}
+              selected= {this.state.selected && this.state.selected.plate === index && this.state.selected.selected}
             />
           )
         })}
