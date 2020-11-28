@@ -2,13 +2,9 @@ import React from 'react';
 import Tile from './Tile';
 
 export default class Plate extends React.Component {
-    // state = {
-    //     selected: undefined
-    // };
 
     onTileClick(color) {
-        // this.setState((prevState) => ({selected: prevState.selected === color ? undefined : color})); 
-        this.props.callback(color);
+        this.props.onTileClickCallback(color, this.props.index);
     };
 
     render() {

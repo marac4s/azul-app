@@ -2,12 +2,9 @@ import React from 'react';
 import Tile from './Tile';
 
 export default class Heap extends React.Component {
-    state = {
-        selected: undefined
-    };
 
     onTileClick(color) {
-        this.setState((prevState) => ({selected: prevState.selected === color ? undefined : color})); 
+        this.props.onTileClickCallback(color, this.props.index);
     };
 
     render() {
@@ -24,7 +21,7 @@ export default class Heap extends React.Component {
                         >
                             <Tile 
                                 color={color}
-                                selected={color === this.state.selected}
+                                selected={color === this.props.selected}
                             />
                         </span>   
                     );
