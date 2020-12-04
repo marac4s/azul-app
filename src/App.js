@@ -80,7 +80,8 @@ export default class App extends React.Component {
     this.setState(() => {
       return ({
         plates: randomizeTilesAndDistribute(),
-        heap: []
+        heap: [],
+        selected: undefined
       })
     })
   }
