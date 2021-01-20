@@ -3,14 +3,23 @@ import './App.css';
 import Plate from './components/Plate';
 import Heap from './components/Heap';
 import PlayerBoard from './components/PlayerBoard';
+import BlueTile from './images/blue.jpg';
+import RedTile from './images/red.jpg';
+import WhiteTile from './images/white.jpg';
+import BlackTile from './images/black.jpg';
+import YellowTile from './images/yellow.jpg';
 
 const HEAP_INDEX = -1
 
-const RED = '#ff0000';
-const BLUE = '#0000ff';
-const GREEN = '#00ff00';
+// const RED = '#ff0000';
+// const BLUE = '#0000ff';
+// const GREEN = '#00ff00';
 
-const LIST_OF_COLORS = [RED, BLUE, GREEN];
+const BLACK = BlackTile;
+const YELLOW = YellowTile;
+const WHITE = WhiteTile;
+
+const LIST_OF_COLORS = [BLACK, YELLOW, WHITE];
 const NUMBER_OF_TILES_PER_COLOR = 4;
 const NUMBER_OF_PLATES = 3;
 
@@ -69,11 +78,11 @@ function shuffle(array) {
 export default class App extends React.Component {
   state = {
     plates: [
-      [RED, BLUE, GREEN, RED],
-      [RED, BLUE, GREEN, RED],
-      [RED, BLUE, GREEN, RED]
+      [BLACK, YELLOW, WHITE, BLACK],
+      [BLACK, YELLOW, WHITE, BLACK],
+      [BLACK, YELLOW, WHITE, BLACK]
     ],
-    heap: [RED, BLUE, GREEN, RED],
+    heap: [BLACK, YELLOW, WHITE, BLACK],
     selected: undefined
   }
 

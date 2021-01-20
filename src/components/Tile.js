@@ -5,7 +5,9 @@ export default class Tile extends React.Component {
         return (
             <div 
                 className={`Tile ${this.props.selected ? 'shaking' : ''}`}
-                style={{backgroundColor: this.props.color }}>
+                // style={{backgroundColor: this.props.color }}
+                style={{backgroundImage: `url(${this.props.color})` }}
+            >
             </div>
         );
     }

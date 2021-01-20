@@ -33,7 +33,8 @@ export default class TileSpace extends React.Component {
             <div
                 className={this.getStatus(this.props.tile)}
                 onClick={this.props.tile === undefined && this.onTileSpaceClick}
-                style={{backgroundColor: this.state.color }}
+                // style={{backgroundColor: this.state.color }}
+                style={{backgroundImage: `url(${this.state.color})` }}
             >
             </div>
         );
