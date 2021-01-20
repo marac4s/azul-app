@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Plate from './components/Plate';
 import Heap from './components/Heap';
+import PlayerBoard from './components/PlayerBoard';
 
 const HEAP_INDEX = -1
 
@@ -124,83 +125,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div className="grid">
-          <div className="h-flex-container">
-            <div className="flex-cell cell-1of5">
-            </div>
-            <div className="flex-cell cell-1of5">
-            </div>
-            <div className="flex-cell cell-1of5">
-            </div>
-            <div className="flex-cell cell-1of5">
-            </div>
-            <div className="flex-cell cell-1of5">
-              <div className="Tile"></div>
-            </div>
-          </div>
-          <div className="h-flex-container">
-            <div className="flex-cell cell-1of5">
-            </div>
-            <div className="flex-cell cell-1of5">
-            </div>
-            <div className="flex-cell cell-1of5">
-            </div>
-            <div className="flex-cell cell-1of5">
-              <div className="Tile"></div>
-            </div>
-            <div className="flex-cell cell-1of5">
-              <div className="Tile"></div>
-            </div>
-          </div>
-          <div className="h-flex-container">
-            <div className="flex-cell cell-1of5">
-            </div>
-            <div className="flex-cell cell-1of5">
-            </div>
-            <div className="flex-cell cell-1of5">
-              <div className="Tile"></div>
-            </div>
-            <div className="flex-cell cell-1of5">
-              <div className="Tile"></div>
-            </div>
-            <div className="flex-cell cell-1of5">
-              <div className="Tile"></div>
-            </div>
-          </div>
-          <div className="h-flex-container">
-            <div className="flex-cell cell-1of5">
-            </div>
-            <div className="flex-cell cell-1of5">
-              <div className="Tile"></div>
-            </div>
-            <div className="flex-cell cell-1of5">
-              <div className="Tile"></div>
-            </div>
-            <div className="flex-cell cell-1of5">
-              <div className="Tile"></div>
-            </div>
-            <div className="flex-cell cell-1of5">
-              <div className="Tile"></div>
-            </div>
-          </div>
-          <div className="h-flex-container">
-            <div className="flex-cell cell-1of5">
-              <div className="Tile"></div>
-            </div>
-            <div className="flex-cell cell-1of5">
-              <div className="Tile"></div>
-            </div>
-            <div className="flex-cell cell-1of5">
-              <div className="Tile"></div>
-            </div>
-            <div className="flex-cell cell-1of5">
-              <div className="Tile"></div>
-            </div>
-            <div className="flex-cell cell-1of5">
-              <div className="Tile"></div>
-            </div>
-          </div>
-        </div>
+        <PlayerBoard selected={this.state.selected? this.state.selected.selectedColor : undefined}/>
         <button onClick={this.onInitGame}>Cusmalize</button>
         <Heap
           onTileClickCallback={this.onTileClickCallback}
